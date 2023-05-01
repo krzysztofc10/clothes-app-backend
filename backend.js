@@ -78,6 +78,28 @@ app.post("/api/deletePhoto", (req,res)=>{
     });
 });
 
+app.get("/api/getOutfits", (req,res)=>{
+    db.query(`Select * from Outfits;`, (err,result)=>{
+        if(err) {
+            console.log(err)
+        } 
+        res.send(result)
+    });
+});
+
+app.post("/api/addPhotoInfo", (req,res)=>{
+    const photoId = req.body.photoId;
+    const category = req.body.category;
+    const info = req.body.info;
+
+    db.query(`UPDATE Photos SET category = '${ category }', info = '${ info }' where photo_id like ${ photoId };`, (err,result)=>{
+        if(err) {
+            console.log(err)
+        } 
+        res.send(result)
+    });
+});
+
 app.post("/api/getPhoto", (req,res)=>{
     const photoId = req.body.photoId;
 

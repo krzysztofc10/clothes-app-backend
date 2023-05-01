@@ -15,6 +15,8 @@ CREATE TABLE Photos
 (
  photo_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
  user_id varchar(500) NOT NULL,
+ category varchar(500) DEFAULT '' NOT NULL,
+ info varchar(500) DEFAULT '' NOT NULL,
  src varchar(1000) NOT NULL
 );
 
@@ -26,5 +28,34 @@ CREATE TABLE Ratings
  comment varchar(1000) NOT NULL
 );
 
+CREATE TABLE Outfits
+(
+ outfit_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ name varchar(1000) NOT NULL
+);
 
-INSERT INTO Users (name, surname, email, avatar) values ('Nisarg','Upadhyay')
+INSERT INTO Outfits (outfit_id, name) values (NULL,'Sukienka');
+INSERT INTO Outfits (outfit_id, name) values (NULL,'Marynarka');
+INSERT INTO Outfits (outfit_id, name) values (NULL,'Kurtka');
+INSERT INTO Outfits (outfit_id, name) values (NULL,'Płaszcz');
+INSERT INTO Outfits (outfit_id, name) values (NULL,'Kamizelka');
+INSERT INTO Outfits (outfit_id, name) values (NULL,'Garnitur');
+INSERT INTO Outfits (outfit_id, name) values (NULL,'Koszula');
+INSERT INTO Outfits (outfit_id, name) values (NULL,'Bluzka');
+INSERT INTO Outfits (outfit_id, name) values (NULL,'T-shirt');
+INSERT INTO Outfits (outfit_id, name) values (NULL,'Topy');
+INSERT INTO Outfits (outfit_id, name) values (NULL,'Spodnie');
+INSERT INTO Outfits (outfit_id, name) values (NULL,'Jeansy');
+INSERT INTO Outfits (outfit_id, name) values (NULL,'Szorty');
+INSERT INTO Outfits (outfit_id, name) values (NULL,'Spódnice');
+INSERT INTO Outfits (outfit_id, name) values (NULL,'Sweter');
+INSERT INTO Outfits (outfit_id, name) values (NULL,'Bluza');
+INSERT INTO Outfits (outfit_id, name) values (NULL,'Buty');
+INSERT INTO Outfits (outfit_id, name) values (NULL,'Torebka');
+INSERT INTO Outfits (outfit_id, name) values (NULL,'Czapka');
+INSERT INTO Outfits (outfit_id, name) values (NULL,'Biżuteria');
+INSERT INTO Outfits (outfit_id, name) values (NULL,'Okulary');
+INSERT INTO Outfits (outfit_id, name) values (NULL,'Zegarek');
+INSERT INTO Outfits (outfit_id, name) values (NULL,'Strój kąpielowy');
+INSERT INTO Outfits (outfit_id, name) values (NULL,'Skarpety');
+INSERT INTO Outfits (outfit_id, name) values (NULL,'Polo');
