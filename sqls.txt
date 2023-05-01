@@ -1,0 +1,30 @@
+create database clothyApp;
+
+use clothyApp;
+
+CREATE TABLE Users
+(
+ user_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ name varchar(50) NOT NULL,
+ surname varchar(50) NOT NULL,
+ email varchar(200) NOT NULL,
+ avatar varchar(4000) NOT NULL
+);
+
+CREATE TABLE Photos
+(
+ photo_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ user_id varchar(500) NOT NULL,
+ src varchar(1000) NOT NULL
+);
+
+CREATE TABLE Ratings
+(
+ photo_id int NOT NULL,
+ user_id int NOT NULL,
+ star varchar(1000) NOT NULL,
+ comment varchar(1000) NOT NULL
+);
+
+
+INSERT INTO Users (name, surname, email, avatar) values ('Nisarg','Upadhyay')
