@@ -31,31 +31,32 @@ CREATE TABLE Ratings
 CREATE TABLE Outfits
 (
  outfit_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
- name varchar(1000) NOT NULL
+ name_pl varchar(1000) NOT NULL,
+ name_en varchar(1000) NOT NULL
 );
 
-INSERT INTO Outfits (outfit_id, name) values (NULL,'Sukienka');
-INSERT INTO Outfits (outfit_id, name) values (NULL,'Marynarka');
-INSERT INTO Outfits (outfit_id, name) values (NULL,'Kurtka');
-INSERT INTO Outfits (outfit_id, name) values (NULL,'Płaszcz');
-INSERT INTO Outfits (outfit_id, name) values (NULL,'Kamizelka');
-INSERT INTO Outfits (outfit_id, name) values (NULL,'Garnitur');
-INSERT INTO Outfits (outfit_id, name) values (NULL,'Koszula');
-INSERT INTO Outfits (outfit_id, name) values (NULL,'Bluzka');
-INSERT INTO Outfits (outfit_id, name) values (NULL,'T-shirt');
-INSERT INTO Outfits (outfit_id, name) values (NULL,'Topy');
-INSERT INTO Outfits (outfit_id, name) values (NULL,'Spodnie');
-INSERT INTO Outfits (outfit_id, name) values (NULL,'Jeansy');
-INSERT INTO Outfits (outfit_id, name) values (NULL,'Szorty');
-INSERT INTO Outfits (outfit_id, name) values (NULL,'Spódnice');
-INSERT INTO Outfits (outfit_id, name) values (NULL,'Sweter');
-INSERT INTO Outfits (outfit_id, name) values (NULL,'Bluza');
-INSERT INTO Outfits (outfit_id, name) values (NULL,'Buty');
-INSERT INTO Outfits (outfit_id, name) values (NULL,'Torebka');
-INSERT INTO Outfits (outfit_id, name) values (NULL,'Czapka');
-INSERT INTO Outfits (outfit_id, name) values (NULL,'Biżuteria');
-INSERT INTO Outfits (outfit_id, name) values (NULL,'Okulary');
-INSERT INTO Outfits (outfit_id, name) values (NULL,'Zegarek');
-INSERT INTO Outfits (outfit_id, name) values (NULL,'Strój kąpielowy');
-INSERT INTO Outfits (outfit_id, name) values (NULL,'Skarpety');
-INSERT INTO Outfits (outfit_id, name) values (NULL,'Polo');
+INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'Sukienka','Dress');
+INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'Marynarka','Navy');
+INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'Kurtka','Jacket');
+INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'Płaszcz','Coat');
+INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'Kamizelka','Waistcoat');
+INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'Garnitur','Suit');
+INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'Koszula','Shirt');
+INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'Bluzka','Blouse');
+INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'T-shirt','T-shirt');
+INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'Topy','Tops');
+INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'Spodnie','Trousers');
+INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'Jeansy','Jeans');
+INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'Szorty','Shorts');
+INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'Spódnice','Skirts');
+INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'Sweter','Jumper');
+INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'Bluza','Sweatshirt');
+INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'Buty','Shoes');
+INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'Torebka','Handbag');
+INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'Czapka','Cap');
+INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'Biżuteria','Jewellery');
+INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'Okulary','Glasses');
+INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'Zegarek','Watch');
+INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'Strój kąpielowy','Swimwear');
+INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'Skarpety','Socks');
+INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'Polo','Polo');
