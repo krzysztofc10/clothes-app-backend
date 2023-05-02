@@ -36,7 +36,7 @@ app.get("/api/get", (req,res)=>{
 app.post("/api/getPhotos", (req,res)=>{
     const userId = req.body.userId;
 
-    db.query(`SELECT P.photo_id, P.src from (SELECT Distinct(photo_id) from Ratings Where user_id = ${ userId }) as R Right join Photos P on R.photo_id = P.photo_id Where ISNULL(R.Photo_id) and P.user_id <> ${ userId };`, (err,result)=>{
+    db.query(`SELECT P.photo_id, P.src, P.category, P.info from (SELECT Distinct(photo_id) from Ratings Where user_id = ${ userId }) as R Right join Photos P on R.photo_id = P.photo_id Where ISNULL(R.Photo_id) and P.user_id <> ${ userId };`, (err,result)=>{
         if(err) {
             console.log(err)
         } 
@@ -47,7 +47,7 @@ app.post("/api/getPhotos", (req,res)=>{
 app.post("/api/getMyPhotos", (req,res)=>{
     const userId = req.body.userId;
 
-    db.query(`SELECT P.photo_id, P.src, ROUND(AVG(R.stars),2) as 'avg' from (SELECT * from Photos where user_id = ${ userId }) as P Join Ratings R on P.photo_id =
+    db.query(`SELECT P.photo_id, P.src, ROUND(AVG(R.stars),2) as 'avg', P.category, P.info from (SELECT * from Photos where user_id = ${ userId }) as P Join Ratings R on P.photo_id =
     R.photo_id GROUP BY P.photo_id, P.src;`, (err,result)=>{
         if(err) {
             console.log(err)
@@ -93,17 +93,6 @@ app.post("/api/addPhotoInfo", (req,res)=>{
     const info = req.body.info;
 
     db.query(`UPDATE Photos SET category = '${ category }', info = '${ info }' where photo_id like ${ photoId };`, (err,result)=>{
-        if(err) {
-            console.log(err)
-        } 
-        res.send(result)
-    });
-});
-
-app.post("/api/getPhoto", (req,res)=>{
-    const photoId = req.body.photoId;
-
-    db.query(`SELECT src from Photos where photo_id like ${ photoId };`, (err,result)=>{
         if(err) {
             console.log(err)
         } 
