@@ -113,6 +113,19 @@ app.post("/api/getUser", (req,res)=>{
     });
 });
 
+app.post("/api/getRatings", (req,res)=>{
+    const photoId = req.body.photoId;
+
+    db.query(`SELECT star, comment from Ratings WHERE photo_id = '${ photoId }'`, (err,result)=>{
+        if(err) {
+            console.log(err)
+            res.send('false')
+        } else {
+            res.send(result)
+        }
+    });
+});
+
 app.post('/api/create', (req,res)=> {
     const name = req.body.name;
     const surname = req.body.surname;
