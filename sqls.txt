@@ -17,7 +17,8 @@ CREATE TABLE Photos
  user_id varchar(500) NOT NULL,
  category varchar(500) DEFAULT '' NOT NULL,
  info varchar(500) DEFAULT '' NOT NULL,
- src varchar(1000) NOT NULL
+ src varchar(1000) NOT NULL,
+ date varchar(1000) DEFAULT '' NOT NULL
 );
 
 CREATE TABLE Ratings
@@ -25,7 +26,8 @@ CREATE TABLE Ratings
  photo_id int NOT NULL,
  user_id int NOT NULL,
  star varchar(1000) NOT NULL,
- comment varchar(1000) NOT NULL
+ comment varchar(1000) NOT NULL,
+ date varchar(1000) NOT NULL
 );
 
 CREATE TABLE Outfits

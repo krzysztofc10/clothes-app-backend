@@ -91,8 +91,9 @@ app.post("/api/addPhotoInfo", (req,res)=>{
     const photoId = req.body.photoId;
     const category = req.body.category;
     const info = req.body.info;
+    const date = req.body.date;
 
-    db.query(`UPDATE Photos SET category = '${ category }', info = '${ info }' where photo_id like ${ photoId };`, (err,result)=>{
+    db.query(`UPDATE Photos SET category = '${ category }', info = '${ info }', date = '${ date }' where photo_id like ${ photoId };`, (err,result)=>{
         if(err) {
             console.log(err)
         } 
@@ -116,7 +117,7 @@ app.post("/api/getUser", (req,res)=>{
 app.post("/api/getRatings", (req,res)=>{
     const photoId = req.body.photoId;
 
-    db.query(`SELECT star, comment from Ratings WHERE photo_id = '${ photoId }'`, (err,result)=>{
+    db.query(`SELECT star, comment, date from Ratings WHERE photo_id = '${ photoId }'`, (err,result)=>{
         if(err) {
             console.log(err)
             res.send('false')
@@ -159,8 +160,9 @@ app.post('/api/ratePicture', (req,res)=> {
     const userId = req.body.userId;
     const star = req.body.numOfStars;
     const comment = req.body.comment;
+    const date = req.body.date;
 
-    db.query("INSERT INTO Ratings (photo_id, user_id, star, comment) VALUES (?,?,?,?)",[photoId,userId,star,comment], (err,result)=>{
+    db.query("INSERT INTO Ratings (photo_id, user_id, star, comment, date) VALUES (?,?,?,?,?)",[photoId,userId,star,comment,date], (err,result)=>{
         if(err) {
             console.log(err)
         } else {
