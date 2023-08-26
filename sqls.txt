@@ -62,3 +62,4 @@ INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'Zegarek','Watch'
 INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'Strój kąpielowy','Swimwear');
 INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'Skarpety','Socks');
 INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'Polo','Polo');
+INSERT INTO Outfits (outfit_id, name_pl, name_en) values (NULL,'Makijaż','Make-up');

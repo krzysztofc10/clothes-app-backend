@@ -47,8 +47,8 @@ app.post("/api/getPhotos", (req,res)=>{
 app.post("/api/getMyPhotos", (req,res)=>{
     const userId = req.body.userId;
 
-    db.query(`SELECT P.photo_id, P.src, P.category, P.info, ROUND(AVG(R.star),2) as 'avg' from (SELECT * from Photos where user_id = ${ userId }) as P Join Ratings R on P.photo_id =
-    R.photo_id GROUP BY P.photo_id, P.src, P.category, P.info;`, (err,result)=>{
+    db.query(`SELECT P.photo_id, P.src, P.category, P.info, P.date, ROUND(AVG(R.star),2) as 'avg' from (SELECT * from Photos where user_id = ${ userId }) as P Join Ratings R on P.photo_id =
+    R.photo_id GROUP BY P.photo_id, P.src, P.category, P.info, P.date;`, (err,result)=>{
         if(err) {
             console.log(err)
         } 
